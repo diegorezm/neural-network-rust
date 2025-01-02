@@ -12,20 +12,20 @@ Here’s the code:
 ```rust
 fn main() {
     let input = 10.0;
-    let desired_out = 26.0;
+    let desired_out = 120.0;
     let mut c = 2.0;
     loop {
         let output = input * c;
         let error = desired_out - output;
-        if output != 0.0 {
-            eprintln!("ERROR: {error}");
-            if error < 0.0 {
+        if error != 0.0 {
+            eprint!("ERROR: {error}\n");
+            if output < desired_out {
                 c += 0.5;
             } else {
                 c -= 0.5;
             }
         } else {
-            println!("OK");
+            eprintln!("OK!\nThe desired response was: {output}");
             break;
         }
     }
